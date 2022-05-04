@@ -21,14 +21,8 @@
             {name: 'Philadelphia', population: 1526006}
         ];
 
-        // Copy the big cities with MORE than 3 million inhabitants into a new list.
-        let bigCities = [];
-
-        for (let i = 0; i < cities.length; i++) {
-            if (cities[i].population > 3000000) {
-                bigCities.push(cities[i]);
-            }
-        }
+        // Filter the big cities with LESS than 3 million inhabitants - using an arrow function.
+        let bigCities = cities.filter((city) => city.population < 3000000);
 
         display("Big Cities", bigCities);
     }
@@ -37,15 +31,15 @@
 <body>
 
 <div class="container-fluid p-5 bg-primary text-white text-center">
-  <h1>Objekte aus Array filtern</h1>
+  <h1>Mit Array Function Objekte aus Array filtern</h1>
 </div>
   
 <div class="container mt-5">
   <div class="row">
     <div class="col-sm-4">
       <p>Aufgabestelltung: Erstelle eine Liste von Grossstädten, welche pro Stadt 'name' und 
-            'population' enthalten. Zeige diejenigen Städte in der Webseite an, welche MEHR als drei Millionen 
-            Einwohner haben.
+            'population' enthalten. Zeige diejenigen Städte in der Webseite an, welche WENIGER
+             als drei Millionen Einwohner haben. <br>Wichtig: Verwende für den Filter eine Arrow Function.
       </p> 
       <table class="table">
         <thead>
