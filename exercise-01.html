@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Übungen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/tools.js"></script>
+
+  <script>
+    // This script requires the tools.js file.
+
+    function execute() {
+        // Set list of city objects.
+        let cities = [
+            {name: 'Los Angeles', population: 3792621},
+            {name: 'New York', population: 8175133},
+            {name: 'Chicago', population: 2695598},
+            {name: 'Houston', population: 2099451},
+            {name: 'Philadelphia', population: 1526006}
+        ];
+
+        // Copy the big cities with more than 3 million inhabitants into a new list.
+        // let bigCities = cities.filter((city) => city.population < 3000000)
+        let bigCities = [];
+
+        for (let i = 0; i < cities.length; i++) {
+            if (cities[i].population > 3000000) {
+                bigCities.push(cities[i]);
+            }
+        }
+
+        display("Big Cities", bigCities);
+    }
+  </script>
+</head>
+<body>
+
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1>Objekte aus Array filtern</h1>
+</div>
+  
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Aufgabestelltung: Erstelle eine Liste von Grossstädten, welche pro Stadt 'name' und 
+            'population' enthalten. Zeige diejenigen Städte in der Webseite an, welche mehr als drei Millionen 
+            Einwohner haben.
+      </p> 
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Stadt</th>
+            <th>Einwohnerzahl</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Los Angeles</td>
+            <td>3792621</td>
+          </tr>
+          <tr>
+            <td>New York</td>
+            <td>8175133</td>
+          </tr>
+          <tr>
+            <td>Chicago</td>
+            <td>2695598</td>
+          </tr>
+          <tr>
+            <td>Houston</td>
+            <td>2099451</td>
+          </tr>
+          <tr>
+            <td>Philadelphia</td>
+            <td>1526006</td>
+          </tr>
+        </tbody>
+      </table>
+      <button onclick="execute();">Ausführen</button>
+      <p>&nbsp;</p>
+      <p id="display"></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
